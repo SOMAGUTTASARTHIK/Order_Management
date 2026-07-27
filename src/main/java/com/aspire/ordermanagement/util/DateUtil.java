@@ -1,6 +1,7 @@
 package com.aspire.ordermanagement.util;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 
@@ -15,7 +16,7 @@ public class DateUtil {
 	}
 	
 	public static LocalDate toLocalDate(String date) {
-		if(date == null) {
+		if(date == null ||date.trim().isEmpty()) {
 			return null;
 		}
 		
@@ -27,12 +28,12 @@ public class DateUtil {
 		
 	}
 	
-	public static String toString(LocalDate date) {
-		if(date == null) {
+	public static String toString(LocalDateTime localDateTime) {
+		if(localDateTime == null) {
 			return null;
 		}
 		
-		return date.format(DATE_TIME_FORMATTER);
+		return localDateTime.format(DATE_TIME_FORMATTER);
 		
 	}
 

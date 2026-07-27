@@ -5,7 +5,7 @@ public class OrderResponseDto {
 	private Long orderId;
 	private Long userId;
 	private Long productId;
-	private String orderTable;
+	private String status;
 	private String deliveryAdress;
 	private String orderNumber;
 	private String deliveryDate;
@@ -34,12 +34,12 @@ public class OrderResponseDto {
 		this.productId = productId;
 	}
 
-	public String getOrderTable() {
-		return orderTable;
+	public String getStatus() {
+		return status;
 	}
 
-	public void setOrderTable(String orderTable) {
-		this.orderTable = orderTable;
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getDeliveryAdress() {

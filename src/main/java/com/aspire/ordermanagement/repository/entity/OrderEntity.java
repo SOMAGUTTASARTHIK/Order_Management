@@ -3,17 +3,24 @@ package com.aspire.ordermanagement.repository.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "ORDER_TL")
 public class OrderEntity {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long orderId;
 	private Long userId;
 	private Long productId;
-	private String orderTable;
 	private String deliveryAdress;
 	private String orderNumber;
 	private LocalDateTime deliveryDate;
+	private String status;
 	private String updateAt;
 	private String createAt;
 
@@ -41,14 +48,6 @@ public class OrderEntity {
 		this.productId = productId;
 	}
 
-	public String getOrderTable() {
-		return orderTable;
-	}
-
-	public void setOrderTable(String orderTable) {
-		this.orderTable = orderTable;
-	}
-
 	public String getDeliveryAdress() {
 		return deliveryAdress;
 	}
@@ -71,6 +70,14 @@ public class OrderEntity {
 
 	public void setDeliveryDate(LocalDateTime deliveryDate) {
 		this.deliveryDate = deliveryDate;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 	public String getUpdateAt() {
