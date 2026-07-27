@@ -36,8 +36,8 @@ public class OrderRequestDto {
 		return productId;
 	}
 
-	public void setProductId(Long productId) {
-		this.productId = productId;
+	public void setProductId(long l) {
+		this.productId = l;
 	}
 
 	public String getDeliveryAdress() {
@@ -48,4 +48,10 @@ public class OrderRequestDto {
 		this.deliveryAdress = deliveryAdress;
 	}
 
+	public Long getUserId() {
+		
+		return getUserId();
+	}
+
+	
 }

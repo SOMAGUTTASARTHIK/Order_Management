@@ -12,21 +12,18 @@ import com.aspire.ordermanagement.util.DateUtil;
 @Component
 public class OrderMapper {
 
-	
-	public OrderEntity toEntity(OrderRequestDto orderRequestDto) throws BadRequestException {
-
+	public OrderEntity toEntity(OrderRequestDto orderRequestDto) {
 		if (orderRequestDto == null) {
 			throw new BadRequestException("orderRequestDto is required");
 		}
-
 		OrderEntity orderEntity = new OrderEntity();
+		orderEntity.setUserId(orderRequestDto.getUserId());
 		orderEntity.setProductId(orderRequestDto.getProductId());
 		orderEntity.setDeliveryAdress(orderRequestDto.getDeliveryAdress());
 		orderEntity.setStatus(orderRequestDto.getStatus());
 		if (orderRequestDto.getDeliveryDate() != null) {
 			orderEntity.setDeliveryDate(DateUtil.toLocalDate(orderRequestDto.getDeliveryDate()).atStartOfDay());
 		}
-
 		return orderEntity;
 	}
 

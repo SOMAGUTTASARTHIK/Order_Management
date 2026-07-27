@@ -96,4 +96,9 @@ public class OrderEntity {
 		this.createAt = createAt;
 	}
 
+	public void setProductId(String productId2) {
+		
+		
+	}
+
 }
