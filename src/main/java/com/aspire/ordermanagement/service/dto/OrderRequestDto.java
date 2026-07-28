@@ -2,6 +2,7 @@ package com.aspire.ordermanagement.service.dto;
 
 public class OrderRequestDto {
 
+	private Long userId;
 	private String orderNumber;
 	private String deliveryDate;
 	private String status;
@@ -36,10 +37,6 @@ public class OrderRequestDto {
 		return productId;
 	}
 
-	public void setProductId(long l) {
-		this.productId = l;
-	}
-
 	public String getDeliveryAdress() {
 		return deliveryAdress;
 	}
@@ -48,10 +45,16 @@ public class OrderRequestDto {
 		this.deliveryAdress = deliveryAdress;
 	}
 
-	public Long getUserId() {
-		
-		return getUserId();
+	public void setProductId(Long productId) {
+		this.productId = productId;
 	}
 
-	
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
+
 }
